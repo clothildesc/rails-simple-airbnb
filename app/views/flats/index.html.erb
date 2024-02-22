@@ -1,0 +1,19 @@
+<h1>All our flats</h1>
+
+<div class="d-flex justify-content-between">
+  <% @flats.each do |flat| %>
+  <div class="card" style="width: 18rem;">
+    <div class="card-header">
+      <h5 class="card-title"><%= flat.name %></h5>
+      <p class="card-text"><%= flat.address %></p>
+      <div class="d-flex justify-content-between">
+        <p class="card-text"><%= flat.price_per_night %></p>
+        <p class="card-text"><%= flat.number_of_guests %></p>
+      </div>
+    </div>
+    <div class="card-body">
+      <p><%= link_to "More info", flat_path(flat) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
